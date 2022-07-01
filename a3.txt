@@ -1,0 +1,49 @@
+===========================================
+DS221: INTRODUCTION TO SCALABLE SYSTEMS
+===========================================
+POSTED: 5 NOV, 2018
+DUE DATE: 12 NOV, 2018, 11:59PM
+POINTS: 50 points
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will be using MovieLens (ML) data related to movies for performing several simple analytics using Apache Spark [1]. The CSV dataset is posted in HDFS of the turing cluster at [2], and described in detail at [3]. There are small and full versions. You can test your code on the small dataset on the head node. But your assignments must be completed and results reported for the full dataset on the compute cluster. The files you will be using are ratings.csv, tags.csv, movies.csv, and genome-scores.csv.
+
+Answer the following questions by writing a Spark Python script for each using Spark 2.1 over the RDD API [3] and Python 2.7. Do NOT use dataframes or datasets or other advanced Spark features. The problem should be solved for the most part using Spark APIs directly, with *minimal* post processing in the Python driver code if necessary. In all such cases of processing in the driver code, the data size must have been reduced to under 1000 items or 1MB. Each problem should be a separate Python script file. Your driver code must print exactly 1 line of output as the answer for each task.
+
+[4x5 points = 20 points]
+1) How many distinct users have rated movies? How many distinct users have tagged movies? How many users have both given ratings and tagged movies? (use ratings.csv and tags.csv)
+2) What is the average number of ratings given by users? What is the average value of the ratings given by users? (use ratings.csv)
+3) What is the median value of the ratings given by users? (use ratings.csv)
+4) What are the most number of genres assigned to any movie? (use movies.csv)
+
+[3x10 points = 30 points]
+5) Which are the genres with the most and least number of movies? (use movies.csv)
+6) For movies with more than 1 genre, what are the most and least likely pair of genres to occur together? (use movies.csv)
+7) Given a movie ID, find the top 10 other movies whose genome scores have the nearest Euclidian distance with this, and print their IDs and names. (use genome-scores.csv and movies.csv)
+
+
+HINTS:
+*) Some of the Spark transforms you will likely need are: map, intersection, reduce, distinct, filter, zipWithIndex, sortBy, lookup, flatMap, reduceByKey, join, groupByKey, sortByKey, 
+*) Some of the Spark actions you will likely need are: count, max, min, take
+*) Some of the Python operations you will likely need are: split, int, float, len, find, partition, rfind, replace, rpartition, zip, map, reduce, join, sorted, startswith, sqrt 
+
+REFERENCES:
+[1] https://spark.apache.org/docs/2.2.1/rdd-programming-guide.html, http://spark.apache.org/docs/2.1.1/api/python/pyspark.html
+[2] turing cluster, hdfs:///user/simmhan/ml/
+[3] http://files.grouplens.org/datasets/movielens/ml-latest-README.html,
+"SMALL: 100,000 ratings and 3,600 tag applications applied to 9,000 movies by 600 users. Last updated 9/2018."
+"FULL: 27,000,000 ratings and 1,100,000 tag applications applied to 58,000 movies by 280,000 users. Includes tag genome data with 14 million relevance scores across 1,100 tags. Last updated 9/2018.
+
+
+===========================================
+IMPORTANT NOTE: 
+1) Do NOT save your code/scripts in the HDFS folder. Assume it is globally readable by others in the cluster. Keep your code only in your turing home directory that is access controlled. If we find any code present in HDFS, you will get 0 points for that problem. Follow ethics at all times.
+2) You may  try your scripts for the "small" dataset using the PySpark shell on the head node. Do NOT run your code it for the "full" data on the head node, and instead use the cluster's compute nodes using spark-submit. Those found abusing the cluster resources will have their jobs killed without warning.
+3) Please use the existing source data in HDFS under hdfs:///user/simmhan/ml/ and do NOT create additional copies from the web in your HDFS folders.
+
+===========================================
+SUBMISSION INSTRUCTIONS
+1) Provide a separate Python file for each problem named as "a3_*.py", where '*' is the problem number from 1-7. 
+2) Include a text report with name $username.txt that contains for each problem (1) the console outputs for the print statements, (2) the application ID for the spark job run, and (3) time taken for the execution.
+2) Tar/Gzip the 7 Python script files and the single report file into a file named $username-a3.tar.gz under a folder with your username, where $username is your login name in the turing cluster. 
+3) Email it to manasitiwari@IISc.ac.in and simmhan@iisc.ac.in before 11:59PM on Nov 12, 2018. The subject line should be "ds221-a3-$username". Only a single submission will be accepted, and late submissions will not be accepted.

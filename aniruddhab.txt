@@ -1,0 +1,76 @@
+Assignment 3- Pyspark Report
+
+1) How many distinct users have rated movies? How many distinct users have tagged movies? How many users have both given ratings and tagged movies? (use ratings.csv and tags.csv)
+
+Console Output:
+Number of distinct users who have rated movies : 283228
+Number of distict users who have tagged movies : 19325
+Number of users who have both given ratings and tagged movies : 19325
+
+Application Id : application_1524406905265_3605
+Execution time : 74.7187700272
+
+2) What is the average number of ratings given by users? What is the average value of the ratings given by users? (use ratings.csv)
+
+Console Output:
+Average number of ratings given by users : 97.9897608993
+Average value of ratings given by users : 3.53044521249
+
+Application Id : application_1524406905265_3607
+Execution time : 79.1124150753
+
+3) What is the median value of the ratings given by users? (use ratings.csv)
+
+Console Output:
+Median value of ratings given by users :3.5
+
+Application Id : application_1524406905265_3611
+Execution time : 336.074455023
+
+4) What are the most number of genres assigned to any movie? (use movies.csv)
+
+Console Output:
+Most number of genres assigned to any movie : 10
+
+Application Id : application_1524406905265_3616
+Execution time : 11.7197370529
+
+5) Which are the genres with the most and least number of movies? (use movies.csv)
+
+Console Output:
+Genres with most number of movies : Drama
+Genres with least number of movies : IMAX
+
+Application Id : application_1524406905265_3618
+Execution time : 15.5188469887
+
+6) For movies with more than 1 genre, what are the most and least likely pair of genres to occur together? (use movies.csv)
+
+Console Output:
+Most likely pair of genres to occur together : Drama|Romance
+Least likely pair of genres to occur together : Film-Noir|Western
+
+Application Id : application_1524406905265_3619
+Execution time : 12.6229159832
+
+7) Given a movie ID, find the top 10 other movies whose genome scores have the nearest Euclidian distance with this, and print their IDs and names. (use genome-scores.csv and movies.csv)
+
+Console Output:
+Source Movie: 1 Toy Story (1995)
+Top 10 movies whose genome scores have nearest euclidean distance to the source movie:
+Id: 4886 Name: "Monsters- Inc. (2001)"
+Id: 3114 Name: Toy Story 2 (1999)
+Id: 2355 Name: "Bug's Life- A (1998)"
+Id: 78499 Name: Toy Story 3 (2010)
+Id: 6377 Name: Finding Nemo (2003)
+Id: 50872 Name: Ratatouille (2007)
+Id: 5218 Name: Ice Age (2002)
+Id: 8961 Name: "Incredibles- The (2004)"
+Id: 68954 Name: Up (2009)
+Id: 364 Name: "Lion King- The (1994)"
+
+Application Id : application_1524406905265_3625
+Execution time : 106.757332087
+
+
+
